@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  note-ro:
+    image: nataliabf/note-ro
+    build: .
+    container_name: note-ro
+    volumes:
+      - ./notes:/app/notes
+      - ./docusaurus.config.js:/app/docusaurus.config.js
+    ports:
+      - 3000:3000
+    restart: unless-stopped
